@@ -1,0 +1,18 @@
+{
+        "name"    : "ajfabriq",
+
+        "author"  : {
+                "name"  : "Angel 'Java' Lopez",
+                "email" : "webmaster@ajlopez.com",
+                "url"   : "http://ajlopez.wordpress.com"
+        },
+
+        "version" : "0.1.0",
+
+        "main"    : "./lib/ajfabriq.js",
+
+        "repository": {
+                "type": "git",
+                "url": "git@github.com:ajlopez/AjFabriqJS.git"
+        }
+}
