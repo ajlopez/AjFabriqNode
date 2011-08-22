@@ -3,13 +3,15 @@
  * Module dependencies.
  */
 
+var sio = require('socket.io');
+
 var ajf = require('ajfabriq');
 
 /**
  * Host.
  */
 
-var host = ajf.createHost();
+var host = ajf.createLocalHost(sio.listen(3000));
 
 /**
  * Application configuration.
