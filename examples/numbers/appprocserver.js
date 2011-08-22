@@ -20,18 +20,17 @@ var app = host.createProcessor('numbers', 'application');
 var node = app.createProcessor('processor', 'node');
 node.decrement = function (message) {
 	console.log("Processing number " + message.number);
-	if (message.number <= 1)
+	
+	if (message.number <= 1) {
+		console.log("End Processing");
 		return;
+		}
 		
 	var number = message.number-1;
 	
 	this.post({ action: 'decrement', number: number });
 }
 
-var server = net.createServer(function (socket) {
-	host.connect(new ajfabriq.Socket(socket));
-});
-
-server.listen(3000, 'localhost');
+host.listen(3000);
 
 host.process({ application: 'numbers', node: 'processor', action: 'decrement', number: 10 });
