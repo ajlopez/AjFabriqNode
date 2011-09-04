@@ -25,7 +25,7 @@ var socket = new net.Socket();
 
 socket.connect(3000, 'localhost',
 	function() {
-		host.connect(new ajfabriq.Socket(socket), true);
+		host.connect(new ajfabriq.Channel(socket), true);
 		socket.write(JSON.stringify({name : 'ajfmessage', message: { application: 'numbers', node: 'processor', action: 'decrement', number: 10 }}));
 	}
 );
