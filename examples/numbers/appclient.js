@@ -11,7 +11,7 @@ var host = ajfabriq.createLocalHost();
  
 var app = host.createProcessor('numbers', 'application');
 var node = app.createProcessor('processor', 'node');
-node.decrement = function (message) {
+node.on('decrement', function (message) {
 	console.log("Processing number " + message.number);
 	if (message.number <= 1)
 		return;
@@ -19,7 +19,7 @@ node.decrement = function (message) {
 	var number = message.number-1;
 	
 	this.post({ action: 'decrement', number: number });
-}
+});
 
 var socket = new net.Socket();
 
