@@ -9,7 +9,7 @@ var ajf = require('ajfabriq');
  * Host.
  */
 
-var host = ajf.createHost();
+var host = ajf.createProcessor();
 
 /**
  * Application configuration.
