@@ -1,7 +1,7 @@
 # AjFabriq
 
 AjFabriq is a Node.JS project that helps to write a distributed application, based on applications, nodes
-and actions. It uses JSON message passing and Socket-IO for communication.
+and actions. It uses JSON message passing and Net Socket for communication.
 
 ## Posts
 
