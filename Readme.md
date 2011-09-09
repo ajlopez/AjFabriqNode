@@ -9,6 +9,7 @@ and actions. It uses JSON message passing and Net Socket for communication.
 
 [AjFabriq on NodeJs (Part 2) A local Simple Application](http://ajlopez.wordpress.com/2011/09/08/ajfabriq-on-nodejs-part-2-a-local-simple-application/)
 
+[AjFabriq on NodeJs (Part 3) A Distributed Simple Application](http://ajlopez.wordpress.com/2011/09/09/ajfabriq-on-nodejs-part-3-a-distributed-simple-application/)
 
 ### License
 
