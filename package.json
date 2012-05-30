@@ -1,18 +1,15 @@
-{
-        "name"    : "ajfabriq",
-
-        "author"  : {
-                "name"  : "Angel 'Java' Lopez",
-                "email" : "webmaster@ajlopez.com",
-                "url"   : "http://ajlopez.wordpress.com"
-        },
-
-        "version" : "0.1.0",
-
-        "main"    : "./lib/ajfabriq.js",
-
-        "repository": {
-                "type": "git",
-                "url": "git@github.com:ajlopez/AjFabriqJS.git"
-        }
+{ "name": "ajfabriq"
+, "description": "Distributed applications using messages"
+, "keywords": [ "distributed", "nodejs", "javascript" ]
+, "version": "0.0.1-alfa"
+, "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)"
+, "repository": { "type": "git", "url": "git://github.com/ajlopez/AjFabriq.git" }
+, "main": "./lib/ajfabriq.js"
+, "engines": { "node": ">= 0.6.0 && < 0.9.0" }
+, "scripts": {
+  }
+, "dependencies": {
+  }
+, "devDependencies": {
+  }
 }
