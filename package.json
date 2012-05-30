@@ -3,7 +3,7 @@
 , "keywords": [ "distributed", "nodejs", "javascript" ]
 , "version": "0.0.1-alfa"
 , "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)"
-, "repository": { "type": "git", "url": "git://github.com/ajlopez/AjFabriq.git" }
+, "repository": { "type": "git", "url": "git://github.com/ajlopez/AjFabriqJs.git" }
 , "main": "./lib/ajfabriq.js"
 , "engines": { "node": ">= 0.6.0 && < 0.9.0" }
 , "scripts": {
