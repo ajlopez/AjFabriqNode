@@ -4,7 +4,7 @@
  */
 
 var net = require('net');
-var ajfabriq = require('ajfabriq');
+var ajfabriq = require('../../');
 
 /**
  * Host.
@@ -16,8 +16,9 @@ var host = ajfabriq.createLocalHost();
  * Application configuration.
  */
  
-var app = host.createProcessor('numbers', 'application');
-var node = app.createProcessor('processor', 'node');
+var app = host.createProcessor('application', 'numbers');
+var node = app.createProcessor('node', 'processor');
+
 node.on('decrement', function (message) {
 	console.log("Processing number " + message.number);
 	
