@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/ajlopez/AjFabriqNode.png)](http://travis-ci.org/ajlopez/AjFabriqNode)
 # AjFabriq
 
 AjFabriq is a Node.JS project that helps to write a distributed application, based on applications, nodes
