@@ -11,3 +11,52 @@ and actions. It uses JSON message passing and Net Socket for communication.
 
 [AjFabriq on NodeJs (Part 3) A Distributed Simple Application](http://ajlopez.wordpress.com/2011/09/09/ajfabriq-on-nodejs-part-3-a-distributed-simple-application/)
 
+## Installation
+
+Via npm on Node:
+
+```
+npm install ajfabriq
+```
+
+
+## Usage
+
+Reference in your program:
+
+```js
+var ajfabriq = require('ajfabriq');
+```
+
+TBD
+
+## Development
+
+```
+git clone git://github.com/ajlopez/AjFabriqNode.git
+cd AjFabriqNode
+npm install
+npm test
+```
+
+## Samples
+
+TBD
+
+## To do
+
+- More samples
+- Complete README.md
+
+## Versions
+
+- 0.0.1: Published
+
+## Contribution
+
+Feel free to [file issues](https://github.com/ajlopez/AjFabriqNode) and submit
+[pull requests](https://github.com/ajlopez/AjFabriqNode/pulls) — contributions are
+welcome.
+
+If you submit a pull request, please be sure to add or update corresponding
+test cases, and ensure that `npm test` continues to pass.
