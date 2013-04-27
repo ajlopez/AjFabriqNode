@@ -10,16 +10,21 @@ var host = ajfabriq.createLocalHost();
  
 var app = host.createProcessor({ application: 'numbers' });
 var node = app.createProcessor({ node: 'processor' });
-
-node.on('decrement', function (message) {
-	console.log("Processing number " + message.number);
-	if (message.number <= 1)
-		return;
-		
-	var number = message.number-1;
-	
-	this.post({ action: 'decrement', number: number });
-});
+var decrementor = node.createProcessor(
+    { action: 'decrement' },
+    function (message) {
+        console.log("Processing number " + message.number);
+        
+        if (message.number <= 1) {
+            console.log("End Processing");
+            return;
+        }
+            
+        var number = message.number-1;
+        
+        this.post({ action: 'decrement', number: number });
+    }
+);
 
 var socket = new net.Socket();
 
