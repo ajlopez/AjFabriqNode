@@ -11,7 +11,7 @@ exports['Create Simple Processor'] = function(test) {
 };
 
 exports['Create Simple Processor for Application'] = function(test) {
-	var processor = ajfabriq.createProcessor('application', 'webcrawler');
+	var processor = ajfabriq.createProcessor({ application: 'webcrawler' });
 	
 	test.equal(processor.canProcess({}), false);
 	test.equal(processor.canProcess({ application: 'foo' }), false);
@@ -21,7 +21,7 @@ exports['Create Simple Processor for Application'] = function(test) {
 };
 
 exports['Process Simple Action'] = function(test) {
-	var processor = ajfabriq.createProcessor('application', 'webcrawler');
+	var processor = ajfabriq.createProcessor({ application: 'webcrawler' });
     var message = { application: 'webcrawler', action: 'harvest', url: 'http://www.google.com' };
     
     test.expect(5);
@@ -39,8 +39,8 @@ exports['Process Simple Action'] = function(test) {
 };
 
 exports['Process Action in Child Process'] = function(test) {
-	var processor = ajfabriq.createProcessor('application', 'webcrawler');
-    var child = processor.createProcessor('node', 'harvester');
+	var processor = ajfabriq.createProcessor({ application: 'webcrawler' });
+    var child = processor.createProcessor({ node: 'harvester' });
     var message = { application: 'webcrawler', node: 'harvester', action: 'harvest', url: 'http://www.google.com' };
     
     test.expect(5);
@@ -57,3 +57,37 @@ exports['Process Action in Child Process'] = function(test) {
     processor.process(message);
 };
 
+exports['Get Descriptor from Simple Processor'] = function(test) {
+	var processor = ajfabriq.createProcessor({ application: 'webcrawler' });
+    var descriptor = processor.getDescriptor();
+    
+    test.ok(descriptor);
+    test.ok(descriptor.filter);
+    test.ok(descriptor.filter.application);
+    test.equal(descriptor.filter.application, 'webcrawler');
+    test.equal(descriptor.processors, undefined);
+    test.done();
+};
+
+exports['Get Descriptor from Processor with Child'] = function(test) {
+	var processor = ajfabriq.createProcessor({ application: 'webcrawler' });
+    var child = processor.createProcessor({ node: 'harvester' });
+    var descriptor = processor.getDescriptor();
+    
+    test.ok(descriptor);
+    test.ok(descriptor.filter);
+    test.ok(descriptor.filter.application);
+    test.equal(descriptor.filter.application, 'webcrawler');
+    test.ok(descriptor.processors);
+    test.equal(descriptor.processors.length, 1);
+    
+    var childdescriptor = descriptor.processors[0];
+    
+    test.ok(childdescriptor);
+    test.ok(childdescriptor.filter);
+    test.ok(childdescriptor.filter.node);
+    test.equal(childdescriptor.filter.node, 'harvester');
+    test.equal(childdescriptor.processors, undefined);
+    
+    test.done();
+};
