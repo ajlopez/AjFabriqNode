@@ -16,8 +16,8 @@ var host = ajfabriq.createLocalHost();
  * Application configuration.
  */
  
-var app = host.createProcessor('application', 'numbers');
-var node = app.createProcessor('node', 'processor');
+var app = host.createProcessor({ application: 'numbers' });
+var node = app.createProcessor({ node: 'processor' });
 
 node.on('decrement', function (message) {
 	console.log("Processing number " + message.number);
