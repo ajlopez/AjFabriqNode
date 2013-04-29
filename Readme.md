@@ -41,17 +41,21 @@ npm test
 
 ## Samples
 
-TBD
+- [Numbers](https://github.com/ajlopez/AjFabriqNode/tree/master/samples/numbers) Sending numbers to processors.
+
+- [Web Crawler](https://github.com/ajlopez/AjFabriqNode/tree/master/samples/WebCrawler) Distributed Web Crawler.
 
 ## To do
 
 - More samples
-- Complete README.md
+- README.md for samples
+- Update posts for version 0.0.2
+- Complete usage
 
 ## Versions
 
 - 0.0.1: Published
-- 0.0.2: Under development, in master
+- 0.0.2: Published. Create processor giving an object as filter. New Web Crawler samples.
 
 ## Contribution
 
