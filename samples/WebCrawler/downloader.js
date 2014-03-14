@@ -7,7 +7,7 @@ function createProcessor(processor)
         { action: 'download' },
         function (msg) {
             var link = msg.link;
-            console.log('link', link);
+            console.log('download link', link);
             var urldata = url.parse(link);
             
             options = {
